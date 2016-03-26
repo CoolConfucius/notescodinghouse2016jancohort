@@ -1,0 +1,321 @@
+jan8
+Cade's calculator. 
+Three global boolean variables and two other variables.
+https://github.com/cadenichols/calcjs/blob/master/client/main.js
+operator and operand. toBeCleared, something to do with the next number.  
+he has an icon operand to indicate what he's working with. 
+can also use the keyboard. 
+a couple different ways to go with chaining. 
+can either go with whole sequence first then calculate. that's bit more complicated, even more so with order of operations. 
+
+I'm calculating as they go. 
+
+clear out zero and replce with 3. everything else is appending. until hit operator. don't want to be put more numbers. remember that number and the operator. start doing another number. that replaces the number that was already there. can do a couple things now. can hit equal sign and calculate. if I want to, i can add another operator, but i'll still have to calculate. take the previous number and the old current number, calculate that using operator, and that's gonna become my previous number. 
+
+say: 
+prev 36
+op + 
+curr 4 
+
+i don't have to store the current number cuz it's in the DOM, it's in the display and I can access it. 
+
+then 
+prev 40
+
+prev 40 
+op + 
+curr 5
+
+i hit * 
+prev 45
+op *
+curr 2 
+
+chaining in mac calculator keeps in mind order of operations. it's significantly more difficult. 
+
+in Cade's code, the numbers have ids..... he said it's not cool. 
+
+Cade: 
+when i click an operator, ask am I operating? if that's the case, I want to evaluate, which basically runs what's there (equivalent to my doMath)
+i have checking if divide by zero. 
+
+if we are operating, want to set the display to the result of the operation. 
+
+toBeCleared, if true, next number pressed will clear the display. 
+
+key codes between 48 and 57 are numbers. 
+function keyPressed(e) {
+  var code = e.keyCode;
+  var id;
+  if (code >= 48 && code <= 57) {
+    $('#' + String.fromCharCode(code)).click();
+  } else {
+    switch (code) {
+      case 46: id = '#period'; break;
+      case 47: id = '#divide'; break;
+      case 43: id = '#plus'; break;
+      case 45: id = '#minus'; break;
+      case 42: id = '#mult'; break;
+      case 94: id = '#power'; break;
+      case 99: id = '#clear'; break;
+      case 114: id = '#root'; break;
+      case 95: id = '#invert'; break;
+      case 13:  // enter key
+      case 61: id = '#equals'; break;
+    }
+    $(id).click();
+  }
+}
+
+when i hit a key, it'll simulate me clicking the button, so i don't need to write more code! 
+can press equals or enter, both will get the id and simulate the click event. this is jQuery. 
+
+
+
+===
+var str = '2+6*9-24'
+var items = str.split(/(\D)/g)
+items 
+[]
+items[i-1] * items[i+1]
+items.splice (i - 1, 3, 54)
+['6', '*', '9']
+items....
+
+===
+you might not need jquery. but let's use it
+jquery cheat sheet. 
+
+
+easiest way to bring in jquery is use a cdn. condent delivery network. 
+click on uncompressed, that's all of jquery. if you clikc on the minified one, it's the same code. minification and uglification is the process of taking code and taking out everything that isn't important for execution. take out the comments, take out the white spaces. do that so it'll be smaller, have less data. javascript is minified more so than any other language. it's the language of the internet, it's sent more often. responsiveness go up, webpages run faster. 
+
+i would right click the minified and copy the link address. that's the same thing as clicking the minified and copying the address bar. that's the link to the javascript. that's what we want to put in to the script tag, that's how we load jquery. I want to put jquery before my code so that we can run it. 
+
+in the future, we will have different libraries depending on each other. 
+
+==serve==
+serve is a node module that replaces python's simple http server. it's the same thing but it runs in node. if you want to, do this line to install it: 
+npm install -g serve 
+
+npm stands for node package manager. it comes with node. 
+once you have serve, just type: 
+serve
+
+less typing. it puts on localhost 3000
+
+==back to jquery===
+in chrome dev tools console, 
+jQuery is the same thing as $ 
+it's an object. got lots of different methods on it. it's also a function as well. that's why you've seen $( )
+what we're doing here is invoking jQuery as a function. it does a lot of things. it gives us a jQuery object. 
+
+we select elements by passing a string into this function $( )
+to select all of the h2s, $('h2')
+can select by class: $('.box')
+it's more than just an array of elements. they are jQuery elements. they are jqueryfied so that we can do jquery on them. 
+
+what if i want to change the text of all of my h2s? $('h2').text('something')
+what if i want to query a selector? the .text method is used as both a getter and setting. can both get or set information. what distinguishes the two is the argument. if want to just get value, then don't give it an argument: $('h2').text(); 
+you can chain these methods together. 
+let's change the style of them. if i want to change color of h1, method is .css::  $('h1').css('color', 'blue')
+chain:: $('.box').css('border', '1px solid black').css('background-color', 'grey')
+with css, can also give a group of styles. an object instead. remember to wrap multiword properties such as 'background-color' in quotes: 
+$('.box').css({border: '2px solid red', 'background-color': 'green'})
+
+can use css as a getter as well: 
+$('.box').css('background-color')
+"rgb(0, 128, 0)"
+
+one thing you'll want to do is create elements and add them to the DOM. 
+say I want to add a new header. to create element, you do use a jQuery function, but instead of a selector, you give it a tag itself. by giving it the angle braces... and you don't need closing: 
+var $h2 = $('<h2>'); 
+$h2
+[<h2></h2>]
+this element exists in memory but is not in the DOM. 
+$h2.text('anything i want')
+[<h2>anything i want</h2>]
+
+by convention, we name jquery variables with a $ to remind us it's a jquery object. 
+we need some place to put it in the dom. we can either select an element and make it its sibling or make it its child. 
+say i want to make a child. prepend and append. and makes it the first child and the other the last child. 
+$('.box').append($h2)
+
+what if i want to remove an element? traverse the DOM. 
+in class: when we say first child, we don't mind the first created, but the first one in the order. time doesn't matter. it's order that matters. 
+first select the element and .children() to give us the children. 
+$('.box').children()
+gives us the children of .box 
+$('.box').children('h2')
+gives us the children of .box that are h2
+$('.box').children('h1')
+gives us the children of .box that are h1
+
+dom traversel is getting an element by its relation to other elements. 
+$('.box').children('h1')[0]
+will give you the element itself, not a jquery element. you won't be able to do jquery methods on the element itself. so: 
+$('.box').children('h2').first()
+$('.box').children('h2').first().text()
+give the text of that result. 
+
+selectors in jquery, including pseudo selectors, work like css
+$('.box h2')
+gives children of .box that are children. 
+
+$('.box > h2')
+$('.box > h2:nth-child(1)')
+^ this returns an empty array if the first child of .box is not an h2. 
+
+$('.box > h2:nth-of-type(1)')
+$('.box > h2:first-of-type()')
+
+$('.box > :first-child()')
+[<h1 style=​"color:​ blue;​">​jQuery​</h1>​]
+
+$(':hover') ? 
+
+===
+i want to pick up boxes and move it. first, we're gonna have to select that box. 
+$('.upper').children()
+$('.upper').children(':nth-child(2)')
+selected the second one. store that as a varaible 
+var $2nd = $('.upper').children(':nth-child(2)')
+$2nd 
+[<div class="box">2</div]
+to unwrap jquery: $2nd[0]
+after unwrapping, it's no longer jquerified. vanilla js works on it and jquery doesn't work on it. $2nd[0].innerHTML gives "2" 
+
+var $2nd = $('.upper').children(':nth-child(2)').remove() //this does the removing! and also stores the removed element in jquery element. 
+$2nd 
+[<div class="box">2</div]
+
+removed thing still exist, so we can put it in the dom. 
+$('.lower').append($2nd)
+what if i try to append it again? it diddn't do anything at all. get weird thing in console. you can't add the same thing in the dom again. 
+
+that variable is a reference to the element itself 
+$2nd
+it now exists in the dom. 
+
+can't take thing from dom and append it again. me: so you can only append things in memory. 
+
+$('.upper :last-child()')
+$('.upper :last-child()').text()
+5
+
+$2nd.text('X')
+[<div class=​"box">​X​</div>​]
+changes the text to x 
+
+$2nd = $2nd.remove()
+keeping the reference, but remove from dom. 
+
+$2nd.text('two')
+$('.upper').append($2nd)
+
+$('.upper :first-child()')
+$('.upper :first-child()').after($2nd)
+
+
+== see main.js== 
+event.target is the element event acted on. this is the same thing. 
+event.target and this are the same thing! 
+can wrap it in jquery function. 
+$(event.target)
+which is the same thing as 
+$(this)
+
+$(this).text()
+
+class: see javascript this on mdn 
+this is the context. 
+
+==break==
+doing jquery stuff with vanilla js is really more work. i want you guys to make a simple game. a shell game. usually played with three cups, a coin or ball under the cup. they make you guess where the ball is. 
+
+all i want is three boxes. those will represent our cups. when you get in the page, your code should randomly select one of those to be the right one. randomly pick 0, 1, 2. the user can click one of those. if it's the right one. they win. maybe if they click the right on, it turns green, wrong one it turns red. some kind of indication if they guessed correctly. 
+class: if wrong, show what's right. 
+
+$("#cup"+rand)
+
+can download jquery, put it in your project folder. that way, in case internet is down, you can still use jquery. 
+
+Cade: i can cheat by seeing the source code of your game. class on things? i can just go to dev tools. 
+
+Cade's shell. see screenshot. That random number is never stored in a variable at all. In this game, you just get one try. When you click a box, the first thing I do is .off. .off basically removes an event listener. it says "you can't click anymore"
+jquery method .index() will tell you the index of the thing in relation to its parent. 
+
+Math.random() will give you a number between 0 inclusive and 1 exclusive. Multiply that by 3 then you have number between 0 inclusive and 3 exclusive. Math.floor() essentially rounds down, cut off decimal portion. Combinging, you have random integer ranging 0, 1, or 2. 
+
+Cade's variables are not global vriables. It's not until they click a box, the variable is declared. Variable in boxClicked function. 
+
+.eq , a jquery method that'll find one of the elements that's returned from group of selectors. Me: ? 
+
+summary: .off to turn off event listener. .index to get index. 
+.eq if you want to access something by its index. 
+
+Cade is adding a reset button. it makes the boxes css back to white and put the events again. every time i click that reset button, i attach the event listener. 
+when i click the box, eventhandler just happens once. 
+so if i hit reset, and click the box, it happens a lot. if i set the reset a whole lot of times, and hit a box, then function happens more. 
+
+to get around this, have a boolean variable in global called boxClicked. false by default, set to true when boxClicked, and checked if true in reset function. if true, reset, and set boxClicked to false. 
+
+Cade: oh! I named the boolean the same as the function! 
+
+rename boolean variable boxClicked to wasBoxClicked
+now works. 
+
+another weirder way to do this, see screen shot. now reset doesn't do anything. 
+
+
+===
+The dom is slow. js is fast. we need to reduce the time in access the dom. what i can do, is: 
+var $boxes = $('.box'); 
+
+declare variable in global 
+var $boxes
+
+and in init, 
+$boxes = $('.box'); 
+
+this way, the variable is accessable and only defined when ready! me: HOLY SHIT! 
+in the boxClicked function, can do: 
+var $this = $(this); 
+
+do the queries just in the init() and don't need to do it again. 
+
+deffered event listening. a way to handle events with dynamic elements.... if those elements don't exist when attaching event listener
+
+me: moved some screenshots to trash. see Cade's github for the shellGame. 
+
+...
+why clicking the new box nothing happens but old box still works? event listener. something only happens one time. me: init? 
+to get around this, can give new box an event listener on creation. 
+
+but there's a way to do this so we don't need to add individual eventlistners to each box. we do this by defferred listening. we tell that static parent "hey, if any of children boxes get clicked, have them call the click function"
+class: the container is a static parent, static in that it'll never go away. so it's a prime target for the deferred event. 
+I can attach this event to the container instead of the boxes itself. 
+
+when document is ready, that's when the dom is loaded. we put $('.box').on('click', boxClicked) in init.
+
+class: nested boxes example. stopPropagation. preventing default prevents default behavior. form example, when you hit submit, it'll sumbit the form somewhere and you get a page refresh. if you want to prevent that, you can call prevent default and it won't happen. 
+
+homework, it's gonna be another game. a little bit more of an involved game. Towers of Hanoi. example in coolmath-games.com 
+
+there are three towers, series of disks in decreasing size, each one smaller than one below it. goal is to move disks to right. cannot move disk on top of one that's bigger than it. can't move disk that's not on top. 
+
+can reduce number of rings in the example game! will even tell you that you won with least number of moves possible! 
+
+here's a couple suggestions: why click individual disk? should just click the tower and it'll select disk on top. that'll simplify things a lot. and click other tower to move disk there. 
+easiest way to go is click somewhere in the tower and it'll select the disk on top. this will be another trial of logic. think about game states as well. if i click on tower that has no disks, nothing should happen. if I click tower that has a disk, the top disk is selected. if you click the selected tower again, it should unselect. if you selected a disk and click another tower, then you should move the disk, conditionally! when moving, you remove one disk from selected tower and add it to the other tower. 
+Additional feature is allow them to pick how many disks they want. part of this mvp is having a win condition. there isn't a lose condition. 
+minimum moves is 2^n - 1 where n is the number of disks. even 10 disks is a thousand moves and that's when you play perfectly! the more disks, the longer the game. 
+
+tomorrow, we're gonna learn how to deploy our apps. tomorrow night you won't be assigned homework, but you should be keeping busy. there's a lot of things you can do to prepare yourself. 
+
+you guys will likely have trouble with css. getting divs to obey gravity is tricky. work on the game first. divs want to float on top. 
+classic solution is: ...
+bottom of div? some div attached to bottom of container, and div is tall depending on how many disks is inside. the disk will be as big as it needs to be. 
+this is for each tower. each one can have a base div. the styling on this is not the focus. we're more interested in the strucutre, functionality of the game, and dom manipulation. 
+
+vanilla css! 
