@@ -1,0 +1,667 @@
+cohort3 week1 notes: 
+2016 1 5
+highly recommend evernote! 
+shift cmd 3 to screen capture 
+
+best time to travel: 
+10am to 2pm, after 7:30 pm 
+
+i suppose you can park in yakume Dr 
+reccommend Fernald street 
+
+pair programming 
+big picture 
+comfortable workstation = efficient workstation 
+
+the Driver: 
+tactical 
+line by line 
+
+co-Driver: 
+strategy.
+navigation. 
+error prevention. 
+
+one person is coding, one person looking over shoulder. good to switch. 
+
+half the hands on keyboard, but it's actually faster! 
+reccomend more experienced person to be navigator. but switching off is terrific. 
+it is efficient, powerful way to write code. 
+
+Cade: don't be afraid to ask. much rather you ask too many questions than not enough. 
+
+you don't get a certificate or diploma out of coding house. grading is about accountability. 
+
+recycle bin, just put cans and bottles. everything else goes in the trash compactor. 
+
+second half of the cohort is all about marketing yourself, how to get a job, put your online presence together. first half is focused on skills. 
+
+codinghouse.co/pretest
+
+
+---------  2016 1 6 ---------
+
+cmd space to bring up spotlight 
+go to display to change monitor settings 
+if you want different things on your monitors, display in system preferences. the mirroring is what you don't want. 
+
+HackerRank, it'll give you a function. You write code in the function to make it work. YOu don't have to invoke the function. HackerRank will do that. Good thing to do is console log the function. 
+
+I always lable my console log like this: 
+console.log('x:', x);
+console.log('n:', n);
+
+Debug Output is the console log in HackerRank. 
+Your Output is blank because you didn't return anything. 
+
+The Expected Output doesn's show an array but several lines of items. THis is because HackerRank is designed for more than just javascript. 
+
+In Error, it was expecting us to give it an array and it didn't find one. 
+
+When I return an array, testcase1 is a success. But everything else is wrong. We need to do something that dynamically create this array. 
+
+We don't get to see the other testcases, we don't see the input values or console logs. we only see the sample test cases. 
+
+rule of thumb for intentation, if you're going inside a block... everything in the block will be intented. going in a block, indent again. 
+
+why mac? standard for development. has a unix core. linux also has a unix core. mac has a rich number of tools available. general ease of use. it really is the gold standard for developers. people generally use windows for development. 
+
+spotlight can act as your app launcher. can use it to open chrome or iterm. much faster than finder. can also go to folders such as desktop from spotlight. it can even be a calculator for you. it can do a bunch of other weird things. it's very useful. it's about becoming more efficient using your machine. this is your tool! 
+
+general mac things: 
+chrome. cmd n to open new window. cmd w to close window or tab in chrome. cmd t to open up tabs. cmd w to close the tab if you got a tab. to go back, cmd square bracket. cmd left or right square bracket to go back or forward. 
+
+pay attention to focused application. make sure you're in the app you want to be in. like windows alt tab, the same thing is cmd tab. cmd is your general purpose hotkey modifier. cmd shift tab will go the other way. you can use the arrows while holding cmd. shift is the inverse of many cmds. 
+
+cmd z is like your ctrl z. a lot of windows ctrl hotkeys are equivalent to cmd in mac. 
+
+cmd z to undo. cmd shift z to redo. 
+
+cmd square bracket to indent. 
+
+
+BJ!
+in Sublime, in an untitled, see the bottom right corner. It's in Plain Text by default. Can change it to JavaScript. 
+
+
+up arrow icon is shift. the funny T icon is the option key. the ^ is control key. The common cool symbol is cmd. circle with arrow shooting out of it is esc 
+
+In sublime, hold cmd and click to put a lot of cursors. If I wanted to change potatoes to brussel sprouts... if you click once, you put a cursor there. if you double click, you select the word. if you triple click, you select the line. 
+
+if i hit cmd d, i select the next instant of the word. 
+
+OR 
+cmd control g to select all instances of it. 
+
+usually the cmd control g is the nuclear option if you're sure you want to select all. want to be careful. 
+
+now we can change potatoes to brussel sprouts
+
+i trust my finger to type on keyboard more than clicking. 
+
+use arrow keys to move in editor. hold shift to select as you go. hold option to move by word. to move by word while selecting is shift option and arrow key. a lot faster. cmd is to go all the way. cmd left and right is to go to the beginning or end of the line. cmd up or down is to go to beginning or end of the file. cmd up and down to go to top or bottom of page in chrome. mac hotkeys tend to be universal in mac. 
+
+select all the way is cmd shift arrow key. 
+cmd a is to select all. 
+
+copy cut and paste is same as windows except it's cmd instead of ctrl. 
+
+can do something and paste it with proper indentation. cmd shift v? 
+
+in Sublime, there's edit, line, reindent. it indents perfectly. 
+
+cmd left bracket to unindent. cmd right bracket to indent. click to reindent. there's a faster way. cmd shift p to search stuff in editor. search for reindent. 
+
+
+trackpad: 
+use two fingers to scroll. three fingers allow us to do window management. cmd space to get spolight. type trackpad and go the to trackpad system preferences. recommend explore system preferences of your machine. in more gestures, turn all those things on. change to three fingers instead of four. three fingers up to see all the windows. then you can decide which one you want. or you can three fingers down. it'll focus on particular apps. just for one app. i really recommend you guys to use multiple desktops. when you do three fingers up, at the top, you see multiple desktops. you can use the plus sign to add more desktops. as many as you need. i usually keep around four or five. sometimes as many as eight, as few as two. you can drag windows to other desktops. can three finger left or right to move between desktops. 
+
+i like to have a browser in a desktop and code in another. so i can switch between them quickly. everything in one destop is messy. stay organized. if i want to drag a window to a new desktop, drag it to the plus sign. three fingers down shows windows of one app regardless of what desktops the windows are on. learning these hotkeys make you faster. 
+
+pretty much everything i do starts with terminal. mine may look different than yours cuz i have it configured. tilda, ~ means home directory. your home directory is the one with your name. it's not the root, however. my home directory is in my users. open your finder. right click toolbar. customize toolbar. the path thing should be in there. path shows you where you are in the system. cmd left or right square bracket works here. can also use cmd up. cmd up to go towards root. 
+
+i much rather do these things in terminal. faster and more convinient. 
+
+in terminal, we're getting into unix stuff. everything we do in terminal, these are unix commands. in the shell. 
+pwd 
+print working directory. 
+to go up a level: 
+cd .. 
+.. means parent directory. cd means change directory. cd .. means change directory to parent directory. 
+/ is the root. this is bed rock. can't go up from here. if I want to go back to home directory: 
+cd ~ 
+same thing 
+cd / 
+takes you to root 
+cd 
+cd nothing takes you to home. same as cd ~ . 
+
+you can change the way your shell looks. we can get to that later. have designated places where your work be. don't want to have it in desktops or documents. the deeper you nest your code, the harder to get to. I have a directory called code in my home directory. 
+~/code 
+
+BJ: my equivalent would be cohort 
+
+i also like to haev a temp directory. 
+code is stuff i'm interested in keeping. temp is my strachpad, experimentation. a way to stay organized. i can also list thing out with ls 
+
+important tool tip. 
+tab. that's because of tab completion. it's gonna save you years of your life. what does it do? basically auto completes what you're typing. it works with lots of stuff. say i'm in home directory and want to do go to Applications. i just need to cd capital a and then tab. boom, i'm there. 
+
+say i have a bunch of nonsense and don't want to execute it, control c 
+it quits most things in the terminal. 
+
+back to tab completion. if i want to go to Documents, cd capital d, nothing happens. that's because there are three things that start with capital d. hit tab again. cd D tab tab shows you the posibilities. 
+Desktop Documents Downloads 
+cd Do to narrow your options. 
+Documents Downloads 
+
+cd /
+cd U tab to cd Users/ 
+then c tab to cd Users/cade/ then A tab to cd Users/cade/Applications 
+
+tab completion is important because
+1. it's a lot faster. type one or two letters, tab, you get all the way in there. 
+2. the other reason? it tells you if you're wrong. when tab completion doesn't work when you think it should, that means you're wrong, there's a problem you need to fix. basically, tab completion means faster and less mistakes. 
+
+mkdir 
+to make directory 
+
+for you atom guys, go to the top, install shell commands. that gives you the atom command in the terminal. cmd q is quit by the way. type atom in the terminal to open atom. that's not the way we want to do it though. i wnat to open up my editor in specific directory. 
+
+double dot .. is parent directory. single dot . is current directory. so atom . to open atom in current directory. 
+
+sublime's is a little more involved. sublime text command line. i'm on sublime text 2. 
+
+for sublime text 2: 
+i like it to be subl . 
+that'll open up sublime, but we have to plug this in first. first make sure sublime is in your Applications folder and it should be in there. 
+
+cmd t in terminal to open up new tab. can also do
+
+cmd d 
+to split the panes 
+
+i recommend iterm2. essentially it does the same thing but more horse power. 
+
+cmd w to close the pane. can also do 
+
+cmd shift d 
+to split panes horizontally. 
+
+you have your own Applications folder in your home, but also have a general one in root. so instead of ~/Applications, want just /Applications 
+
+https://www.sublimetext.com/docs/2/osx_command_line.html
+
+copy the stuff in quotes and put it in terminal. 
+
+sudo ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /bin/subl
+
+sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /bin/subl
+
+Sublime Text without the 2 is 3. 
+
+sudo means super user do. that allows you to do protected/adminster/privelege things. it'll ask for your password. 
+
+Sublime 2
+sudo ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl” /usr/local/bin/subl
+​
+Sublime 3
+sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl” /usr/local/bin/subl
+
+cmd tab, while holding, hit q to quit that application. 
+
+another terminal command is 
+open 
+or 
+open . 
+
+this can open finder from terminal. open opens up in finder. subl means sublime. . means here. 
+
+open opens the file? open . opens the directory in finder. 
+
+touch index.html 
+
+html is description of markup of webpage. html is not a webpage, it's a text file. a web browser will interpret that text file to open web page. that's the browser's work. if your html is malformed, the browser is gonna do its best. 
+
+emmet is a tremendous tool for writing html or css faster. say if i want to make a p tag in html, with emmet, i can just type p and hit tab. maybe a div. div>p to make a p tag in a div tag. 
+cmd , 
+opens up preferences in about everything in mac. 
+
+in sublime, want the package control manager. 
+
+in chrome, go to package control, and hit Install Now 
+select your version and copy the text. now open up sublime. we want to open the sublime console you do that by control backtick `
+past the text in there. 
+
+once you install package control, you can install packages. 
+cmd shift p, type install 
+
+emmet, ! tab
+
+go to emmet.io . you want the cheatsheet. 
+img tab gives img tab with src and alt 
+
+i usually start with a bang ! 
+your cursor is at the title tag. hit tab brings you to the body tag. 
+
+script tab by itself gives you just a script tag. instead do 
+script:src tab 
+it'll automatically put a src there. 
+
+link tab for css. see htmltest/index.html
+
+say I'm working with a p tab and i want to give it a class. in css, we designate that with a dot . 
+emmet uses css standards. we take that and append it to element. say we want a p tag with class blue, then p.blue
+hash # for id 
+can have both class and id. order doesn't matter. 
+
+squarebrackets are attributes. curly braces are content/text inside. 
+
+emmet is not a crutch. it just helps you do html faster. you should know how html works. you're unlikely to have emmet in interview. you're liekly to write html on a white board. know how html works or else you'll be in trouble. 
+
+if i want 15 divs, div*15 
+div is the most generic element. you can just say .violet without the div and it makes it div by default. 
+.violet*15 to make 15 violet class divs. 
+
+by the way, there's a screenshot app called grab, but we usually use hotkeys. 
+cmd shift 3 for full screen shot 
+cmd shift 4 to take selection 
+
+ul>.blue 
+in emmet, it's implied that what's in a ul is gonna be an li 
+
+quick way to wrap in parentheses is select the text and hit left parenth. 
+
+in item, $ is dynamic numberer. 
+
+to copy a line, it's 
+cmd shift d 
+so you can just duplicate a line! 
+
+languages such as handlebars or jade transpile into html. 
+
+------ LUNCH BREAK --------
+
+cmd m to minimize window. 
+
+can open . and then double click the index.html 
+or 
+open index.html 
+
+saying open something is the same as double clicking that something. 
+
+this is not the ideal way to render a webpage. not ideal at all. In the future, there will be things that this is not gonna work the way you want to. 
+
+server. 
+we typically see web pages that are served. 
+
+what's a web server? it takes a request. the internet works by requests. 
+
+when i go to google.com, broswer sends a request to google.com 
+
+request comes to web server then it sends back a response. the response will likely have html. web broswer is equipped to accept that html and render it. 
+
+remember, html is not a web page. it's text. the html is rendered by the broswer. it draws elements on the page called the DOM. Document Object Model. 
+
+The broswer only knows 3 languages: HTML, CSS, and JavaScript 
+
+DOM is a representation of the webpage itself. html is not the DOM, it's just static text. DOM is basically the page as it's alive. it's how we're modeling this document. a lot of these things come from decades ago. people thought the internet is documents. but the internet is more alive. the metaphor doesn't work anymore, but we still use those words. 
+
+if you right click on a webpage and view page source..... woah, you see the html. there's some css in there, some javascript in there, but those are things you can put in html. 
+
+you can use your dev tools 
+View, Developer, Developer Tools 
+option cmd i 
+
+Elements, it's dynamic, how we can think about the DOM. 
+
+click the window with cursor icon to mouse over elements and it'll take you to where it is in Elements. 
+
+mac comes with python. with that comes a number of utilities. one allows us to make a simple http server. 
+
+in terminal, this command: 
+python -m SimpleHTTPServer
+
+SimpleHTTPServer is title case. 
+if popup comes out, allow. 
+
+we'll learn other ways, but this is the best way right now. 
+
+0.0.0.0 is an IP address that refers to your machine. webserver is talking to your machine. 
+
+in chrome: 
+0.0.0.0:8000 
+
+BJ: that's the same as localhost:8000
+
+the lines you see in the terminal are requests. 
+browser will automatically look for a favicon. 
+
+in the case of Google, the favicon is the colorful G. That's the icon when you fave. 
+
+we got 404 because we didn't make a favicon, we just have html 
+404 is the error code for not found. 
+this is one of many http error codes. 
+
+200 means success, it means okay, we got it. 
+
+0.0.0.0:8000/
+/ is assumed if you don't have anything after 
+so same as 0.0.0.0:8000
+
+web server responded with html, 200 
+we requested a favicon but it doesn't exist so 404. 
+
+reason why we called index.html is so that it's automatically send out. 
+BJ:that's the default. 
+
+control c to close the server. 
+
+use the mv command to rename. in unix, it's also moving. it's like, taking a file, moving to the same place, and rename it. 
+
+mv index.html bacon.html
+the first thing after the mv is the target. the one after that is either what we're renaming it to or where we're moving it. if we put a path there, we're moving it. 
+
+in terminal, hit up a few times to find your python server command. 
+
+now it's not the same. it's just gonna tell us what's there. it allows us to click on it. now look at the address: 
+0.0.0.0:8000/bacon.html
+
+this is just a local web server. if I want to make it available else where, i have to do something special. 
+
+Codinghouse-5G... ifconfig... http://192.168.1.40:8000/ to see Cade's local website. 
+
+have to make sure you're on the same network as me. 
+Cade makes a change and save. refresh and you'll see current version. 
+if config shows me what ip address i have. 
+
+touch style.css that's classic. we've been using 
+0.0.0.0: 
+but there's also localhost:8000 that's the same thing. I usually like to do localhost cuz it's fewer numbers and periods. 
+
+body { 
+background-color: purple; 
+}
+
+control cmd up and down to move lines. the cursor needs to be somewhere in the line. 
+
+in css, * means everything. 
+
+remember to link it in the html 
+
+link:css tab
+style is the default 
+
+in sublime, 
+option cmd 2 for two vertical panes. option shift cmd 2 for two horizontal panes. 
+
+order is important. body is where your content is. head is meta information, things taken care of before you draw the page. 
+
+if you have a link at the bottom of the body, refresh, for split second, the page is rendered but the css is not loaded. that's because we waited in the body to load the css. there's a little bit of time where the html is rendered but css not loaded. a moment without styling. if you have the style link in the head, there won't be the flash. in the head is where we want the css. 
+
+Mike: 
+don't leave stuff on the bathroom counter. those get swept off. if you need clothes hangers, there's hangers in the lost and found closet. 
+
+cmd / to toggle commenting. 
+
+display: inline-block is what's putting things on the same line. what's centering them is the text-align: center. 
+
+divs by default are block. that means they take up the full width of their parents, so default sibling divs appear below another. display inline or inline block lets us see them next to each other. 
+
+there's a difference between inline and inline block. 
+
+css: there's a hierachy of how things are applied. specifity. 
+
+html is straightforward. css is more nebulous. the concept of specificity is important in css. how specific your rules are, your selectors. 
+
+use % to make dynamic window. % based on parent. 
+
+css. selector and rules
+h1 { color: red; }
+the color red rule applies to all h1. 
+
+pound # in css is id. 
+
+hexadecimal, RGB. can also do a 3 digit one where each color is just 0 to f. or six digit where each color is 00 to ff. 
+
+id overrides element selector, even if the elemenet selector comes after! this is about specifity! classes are more specific than elements and ids are more specific than classes. 
+
+.container > h1 
+refers to h1 that are direct children of class container.
+
+the one with most weight in specificity overrides. 
+
+like html, css is text. it's the broswer that handles the css. html isn't "compiled", it's rendered. html and css aren't code. they just tell the browswer what to render. html is markup, just describing what things look like. css describe how things look. 
+
+difference between id and class
+you can only have one element that has that id. 
+id is meant for unique things. 
+you can have lots of things that share the same class. that allows you to have group of elements that have the same treatment. 
+
+if i make several things with the same id, they're still here. it looks fine. but this will break down once we have code that acts on these things. we'll start to have things that don't work. so don't do that. 
+
+classes are referred to with periods . in css, ids with pound signs # 
+
+we can combine such that 
+p.thing#something {
+  
+}
+with the id, this is surpurflous. but 
+
+p.thing {
+  
+}
+this is how you usually see it. 
+there may be other elements that have that class, we're only talking about p elements that have that class. 
+
+p.thing{}
+p element that has class thing 
+
+p .thing {}
+element that has class thing and is a descendent of a p tag
+this would catch 
+<p><div><div><div><div class="thing"></div></div></div></div> </p>
+
+DOM is a tree. that's how everthing is built in html. everything is inside everything else. we can also think about boxes. the html is a whole big box. inside of it, we have a head and a body. the head and body are children, but also boxes that are nested inside. inside of the body, we may have a div, and inside it, a ul, and in there a bunch of li s. li is a direct child of ul and descendent of the div. 
+
+p > .thing {}
+element that has class thing and is a direct child of a p element 
+
+we can also have rules that apply to severl different elements. we use a comma , 
+
+h1, h2 { color: red; }
+this says all h1s and h2s have color red. 
+
+what if i want to say only second h1 has rule? 
+
+use h1:nth-child(){ }
+
+h1:nth-child(2){ }
+this is saying the h1 that is the second child of its parent. 
+
+h1:nth-child(2){ color: yellow;}
+
+all h1s are red, but if it's the second child of its parent, it'll be yellow. 
+
+if i have a sneaky h2 in it, it's not gonna apply because we specified. if there is not an h1 that isn't a second child... there is no match. 
+
+nth-child is a pseudo selector. it needs to be that child of a parent. but if we want just the type...
+
+h1:nth-of-type(2){color: blue;}
+doesn't have to be second child of parent, just needs to be second h1 of parent. so still works if the second child of the parent is an h2. the second h1 isn't the overal second child of parent, but is the second of the h1 types among the children. 
+
+:hover is neat
+
+h1:hover { color: black;}
+means h1 where the cursor is over it. 
+
+doesn't have to only change color on hover
+h1:hover { 
+color: black;
+margin-left: 50px; 
+}
+
+let the colors, signals of your editor be a clue to you. we are guided along by the editor. 
+
+a linter actively watches your code and it makes sure it's looking good. you can configure linter to do lots of different things. those things might not break your code, but can be a stylistic thing to make your code consistent. if you write code for google, you follow the google code style guide. 
+
+dev tools 
+make small change, save, refresh. 
+but instead, we can use dev tools to change it live. change the style. 
+cmd option j 
+
+on left, Elements. on right, Styles. 
+the right shows us what styles are put on that element. 
+
+not saved. refresh brings it back. there is a way to make your styles persist, but i don't like that. you can connect the styles to the files themselves. 
+
+select folder. map to file system resource. now saving it on chrome dev tools change the source code. i don't like to, but some people do all their style work in chrome. it's up to you. 
+
+click on the color square to get a color selector. it changes live. you can even use the color picker to find colors on the page to use. 
+
+open up dev tools. find the css files in Sources. in Sources, go into htmltest, then click Add Folder to Workspace. if ask if you want to give chrome access to this, allow. once you done that, you can right click the file and click Remove Network Mapping. 
+
+can change the html as well. the star * means not saved. 
+
+broswer. html is only read one time. the css is a live document. broswer knows the html is changed, but doesn't change. refresh. 
+
+in chrome dev tools, use 
+Force element state 
+to check what it's like when hovered. 
+
+can change the margins using arrow keys. hold shift to change by 10. 
+
+chrome dev tools show overridden css styles. crossed out means something is overriding it. 
+
+h1 {
+  color: red
+}
+h1 {
+  color: black 
+}
+
+if specificity is the same, then it's whatever comes after. whoever gets the last word, that's the one that counts. the black comes after so it overcame what came before. 
+
+dev tools can tell you if you're doing something wrong. "invalid property", "invalid property value"
+really really black is not a color. 
+in the hexadecimal, it's got to be 6 or 3 digits. others won't work. 
+
+howtocenterincss.com
+
+don't encourage inline styling. want to separate responsibilities. html shouldn't worry about styling. 
+
+what i just did, cmd d to select the semicolons, then press enter. a lot of what we do in code is processing text. and writing code is just a small percentage of code. typing code is a small percentage of what we'll be doing, but we still want to be good at it. 
+
+can style in the head, but you don't want to do that. better to separate. similarly, can write javascript in html, but you shouldn't. 
+
+when loading multiple css style sheets, you want your guy to have the last laugh. the one that comes after overwrites the one before. 
+
+your homework is to duplicate web page. look at web page and copy it. you can use the static assets of the site such as the pictures there. you can just use those pictures. 
+
+to get the image, right click save image as and in the same directory. can see raw image data in sublime. 
+notice that an img tag doesn't have a closing tag. it's self closing. link is the same way. it acts by itself. you can't put anything in an image, can't nest images, that doesn't make sense. 
+
+can set the size of the image in css. 
+put an id in the img tag. 
+<img id='logo' src="googlelogo.png" alt=""> 
+
+can also copy image address. 
+that link is the image itself. that link i copied, can put that in the source. 
+now we're not hosting our image locally. 
+
+emulate google 
+microphone can be outside of the input in html, but use positioning to give the illusion. 
+
+position relative, if one thing is below a thing, the thing lowers then the thing below it lowers as well.  
+
+position absolute. it doesn't care about anything else, it's just gonna be there where you tell it. 
+
+you can make anything a button even if it's not a button such as a div. use an a tag and a hover effect. you can make it so when you're hovering over it, the cursor changes. with most clickable things, cursor changes into a hand. 
+
+you can make everything a div and just through css and make it into something else. difference between div and span is that span is inline and div is block by default. 
+
+you can make anything look and behave like anything else with css. 
+
+a is short for anchor. it's how you make a clickable link. put url in href and click on it, then it'll take you to the url. if you just put text in an a tag, it'll look like a link. this is based on default styling but you can change these things. 
+
+you can use an a tag to not just direct you to another site, but can direct to somewhere on the same page. you do that by elements having an id
+
+i want you to emulate these websites. one of them is 
+archeeve.com 
+rumblelabs.com
+
+don't use bootstrap. you probably don't need to screen shot. in the rumblelabs, can find the link to the image. on the div, see the styles in the right, background-image: url
+
+url("http://d27bqd9qyr2lqg.cloudfront.net/2014/home/header-brogramming-niall-phil.jpg")
+
+
+
+to git 
+go to github, click the plus sign to create new repository. can name it sweet-html-testing
+
+want to make a repo for each project. 
+
+i'd say don't initialize with readme. 
+
+repo is on the cloud. a commit is a snap shot. repo has all the commits. can revert to an older commit. can have different branches and switch between them. 
+
+follow the stuff. can skip over the echo. git init is the real first step. it creates a local repo in the directory. it created a .git file. can't see it with ls because it's hidden. in unix, any file that starts with a . is hidden. can't see it unless, ls -a 
+
+that .git file is the repo there. to undo the git init, remove the .git 
+
+do rm -rf .git to remove it. but we don't want that. 
+
+you only have to do git init once for every project. 
+
+next, we need to stage our files for committing. that's what the git add does. 
+
+you can add individual files and folders, but we want everything in the directory. to add everything in directory, 
+
+git add . 
+
+at any point, can git status 
+see the changes to be committed. those will be committed on committing. with committing, you always need a message. be descriptive. 
+git commit -m 'first commit'
+
+this still has nothing to do with the repo on github. we link them up by adding a remote. a remote is just a link to that other repo. 
+
+git remote add 
+this means we're adding a remote. the next thing in there is the name of the remote. 
+
+git remote add origin 
+origin is the standard remote name for your github. doesn't have to be origin, but it's convention to name it origin.  
+
+copy the link. 
+git remote add origin https://github.com/.... 
+
+git push origin master
+the master branch is what you get initially. take my local commits and push them up to github. 
+
+what if i want to make a change? 
+
+if i want the change to be represented to github, i have to add and commit again and then push. 
+
+git add . 
+that's staging 
+git commit -m 'uncommented the thing'
+git push origin master 
+
+if you do git status, you'll see "On branch master"
+master branch is your production branch. if you want to add features, you'll typically do that feature on a development branch. once it's good, you can merge it in and bring it up to speed. 
+
+if i do 
+git push 
+by it self, it doesn't know where to push it to. 
+
+if i
+git push -u origin master 
+that sets a default, so that, next time when i do git push to where you set it. 
+
+git remote -v
+will show your remote, where it does on github. it always show twice, the fetch and push. 
+
+
+for homework, no css frameworks. no bootstrap or foundation. 
+
+
+
