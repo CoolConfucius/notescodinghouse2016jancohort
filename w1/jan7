@@ -1,0 +1,577 @@
+2016 1 7 
+
+=== on homework ===
+
+Cade: you want to submit your homework. 
+
+Eliot's 
+#header.smaller{
+  ... 
+}
+jQuery to add and remove class depending on condition. 
+
+Cade: a media query references the media you use to view the page. Are you landscape mode or portrait orientation? The width of the window, the height of it. You can make css rules that work with those things. If the scroll is past a certain point, these rules are applied. 
+
+With Eliot's approach, every time it scrolls, jQuery code is run, a lot of DOM manipulation. But it still works. 
+
+Paige, 
+the scrolly thing. When you hover over it, change bottom position. Change section so that overflow is hidden. 
+<sup> is the super script, that makes the small asterisk. 
+
+Cade: this isn't a frontend focus bootcamp 
+
+
+=== install node ===
+
+in terminal, type: node -v 
+it'll show you something if you installed node 
+go to the link and follow instructions. 
+in terminal, in home directory: touch .bash_profile .bashrc 
+
+cat .bash_profile 
+to view the bash profile 
+
+echo "source ~/.bashrc" >> .bash_profile
+
+want to use latest stable version: v4.2.4
+in terminal: 
+nvm install v4.2.4 && nvm alias default v4.2.4
+
+
+=== node === 
+
+what's node? it's the foundation of being a javascript developer. node runs javascript. it's a js runtime environment. 
+
+there used to be a time when js is just the language of the internet, the language that runs in the browser. idea of running js in other context is unheard of. 
+
+google released v8 engine, it's what runs js in chrome. not too long after that, one developer made node. it's ripped from v8, a js engine. now can run js in the front end and back end. it's why it's so cool to be a js dev. 
+
+in terminal: 
+node 
+you're not the shell/bash anymore. you're in the node REPL. Read Evaluate Print Loop. 
+
+bash is a repl as well. if you type ls and hit enter, it's gonna read what you wrote, evaluate it, and print out a result if there is run, and loop meaning it'll let you do again. repl is a fancy word for a command prompt. 
+
+node is a js repl. in node, can say
+var x = 5 
+and then type 
+x 
+it returns 5
+Math.pow(x, 2)
+returns 25
+
+if you want to test something simple, don't want to make a js file, can just use node. every line you give in, it'll run that line. whatever that line returns will show up below it. 
+var x = 5 returns undefined because it's an assignment. an assignment doesn't return anything. 
+
+no need for semicolons. technically, js can work without semicolons, but you should still use them. 
+
+to get out of node repl, hit control c twice. 
+can also type: .exit 
+
+to run main.js, type in terminal: node main.js 
+it'll execute that js file. 
+
+see main.js 
+
+==================
+
+main.js: 
+// console.log('hello world');
+
+// var name = 'cade';
+//var is creating a new variable here. what if i didn't use the var? 
+
+name = 'cade';
+console.log('name:', name);
+
+// it works. what's going on here? if I don't say var, it's gonna figure out for me. if it does exist, it's gonna overwrite that one. js is loose about its rules. it lets you get away with lots of things you shouldn't get away with. such as using undeclared variables. developers came up with strict mode. strict mode on mdn. 
+// say: 
+
+var name = 'bob';
+nmae = 'cade';
+console.log('name:', name);
+
+//js let the typo fly. I'd prefer it bite my hand. that's what strict mode does for us. it converts mistakes into errors. without strict mode, js assumes you just created a new variable. to turn on strict mode, just put that string: 'use strict'; now we have ReferenceError: nmae is not defined. strictmode helps you write better code. you'll see me usually use strictmode. strictmode is always a good idea. 
+
+
+
+main.js: 
+'use strict'; 
+
+var name = 'bob';
+
+function doThing(){
+  name = name.toUpperCase();
+}
+
+doThing();
+
+console.log('name:', name);
+//this returns name: BOB
+
+var name = 'bob';
+
+function doThing(){
+  var name = 'cade';
+  name = name.toUpperCase();
+}
+
+doThing();
+
+console.log('name:', name);
+//this returns name: bob 
+//what happens is we declared a local variable, in the scope of the function, we have a new name, it has a new varaible. 
+
+var name = 'bob';
+
+function doThing(){
+  name = 'cade';
+  name = name.toUpperCase();
+}
+
+doThing();
+
+console.log('name:', name);
+// this returns name: CADE 
+// we're using the global variable. we're using the one that already exists. without the var here, we're referencing the cade outside of the function, changing the bob to cade. if there were a var, then we wouldn't be dealing with the outside out. 
+
+
+var name = 'bob';
+
+function doThing(){
+  var name = 'cade';
+  name = name.toUpperCase();
+  console.log('inner name:', name);
+}
+
+doThing();
+
+console.log('name:', name);
+// can see that inner name: CADE, name: bob 
+
+// this is a concept called closure. in relation to the way variables are referenced and passed around. 
+
+main.js: 
+// function sum(a, b){
+//   return a + b; 
+//   // why I didn't say var a and var b? if I did, I'd be creating new ones. 
+// }
+// console.log('the sum is:', sum(3,9) );
+
+// function sum(a, b){
+//   var a = 'banana';
+//   var b = 'split';
+//   return a + b; 
+// }
+// console.log('the sum is:', sum(3,9) );
+// this returns: the sum is: banana split 
+
+function sum(a, b){
+  return a + b; 
+}
+console.log('the sum is:', sum(3,9) );
+// the sum is: 12 
+// sum(3,9) is an invokation, it'll be become what returns. that's what return does. 
+
+var n = sum(5, 6); // n is 11. the result of sum(5, 6) is assigned to n. 
+
+var n = sum(1, sum(2, sum(3, 4))); //this works. 
+
+console.log(n); //gives us 10 
+
+var n = sum(1, 2) + sum(3, 4)
+console.log(n); // gives us 10 
+
+
+main.js: 
+function sayHi(name) {
+  return 'Hello ' + name; 
+};
+
+console.log( sayHi('Cade').toUpperCase());
+//HELLO CADE 
+console.log( sayHi('Cade').toUpperCase().slice(0,4));
+// HELL 
+
+// on MDN, String.prototype.slice(). this means, in an instance of a string, we can call slice. in MDN documentation, the square brackets mean optional. 
+
+console.log( sayHi('Cade').split(' '));
+// ['Hello', 'Cade']
+console.log( sayHi('Cade').split(' ').length);
+// 2
+// sayHi('Cade').split(' ') is treated as an array 
+
+console.log( sayHi('Cade').split('o'));
+// split takes the separators out. 
+console.log( sayHi('Cade').split(''));
+// now we have an array of characters. 
+
+
+
+
+Cade: my professors say comment a lot, but I say you don't need to comment for relatively simple code. 
+
+when javascript is run, it goes through the code twice. there's a thing called variable hoisting. the second time actually executes it. 
+ function func(){
+
+ }
+this is evaluated before executed. 
+ var func = function(){
+
+ }
+this is run time. 
+
+for most things, I do it this way: 
+function capOddWords(sentence){}
+
+the difference is very subtle and performance difference is negligible. 
+
+
+// any string that has an odd length is capitalized 
+// 'a string or something' becomes 'A string or SOMETHING'
+// use a map 
+// Me: 
+// var string0 = 'a string or something'; 
+// function oddCap(string){
+//   var array = string.split(' '); 
+//   array = array.map(function(word){
+//     if (word.length % 2 === 1) { word = word.toUpperCase() };
+//     return word; 
+//   }); 
+//   return array.join(' '); 
+// }; 
+
+// console.log(oddCap(string0));
+
+// Cade: 
+// a lot of times when you're working with strings, you split them into arrays of strings. 
+// function capOddWords(sentence){
+//   var words = sentence.split(' '); 
+//   // you want to have variable names that are descriptive. 
+//   // a callback is a function you pass in to another function. We define the function and the map will figure out how to invoke that function. We know how it invokes it. It invokes it once for each item in the array, and each them it does that... 
+//   var modifiedWords = words.map(function(){
+
+//   })
+// };
+
+
+// var arr = [1,2,3,4,5];
+
+// var squares = arr.map(function(){
+
+// });
+// console.log('arr:', arr);
+// console.log('squares:', squares);
+// returns an array of five undefines 
+// we're not returning anything in the callback so we're getting undefines. 
+// NaN is not equal to itself. NaN == Nan and NaN === NaN both return false. triple equal === matches type AND value. double equal == is less strict. == and != are the non strict equality and nonequality, they don't care about type. === and !== are the string equality and nonequality. 
+// Why NaN is not equal to NaN? Say we have two numerical expressions that are compared. The two are not equal but both return NaN. the two NaNs shouldn't be equal bedcause the two expressions aren't equal. NaN means we cannot know it's numerical value. If we there's two NaNs, we can't assume there are the same. 
+// here, we always use strict equality. type coercion happens in non strict equality, it coerces values to be the same type, it does the parsing. We shouldn't leave parsing to the equality. 
+// 5 == '5' => true ;; 5 === parseInt('5')
+// the performance difference is negligible. the point is, we want the control to ourselves. not control is just bad practice.  
+
+// var arr = [1,2,3,4,5];
+
+// var squares = arr.map(function(){
+//   return 'bacon'
+// });
+// console.log('arr:', arr);
+// console.log('squares:', squares);
+// returns array of string bacons. 
+
+// var arr = [1,2,3,4,5,0,0,0,0,0];
+
+// var squares = arr.map(function(num, i, arr){
+//   console.log(num, i, arr);
+//   return 'bacon'
+// });
+// console.log('arr:', arr);
+// console.log('squares:', squares);
+
+// var arr = [1,2,3,4,5];
+
+// var squares = arr.map(function(num, i, arr){
+//   return num * num; 
+// });
+// console.log('    arr:', arr);
+// console.log('squares:', squares);
+
+// the names of the arguments in the callback doesn't matter. what matters is the order. 
+
+// to determine odd or eveness, we use the modulus operator. it's really, getting the remainder when you do a division. 10 % 3, ten mod three, you divide 3 into 10 and take the remainder. the remainder will be 1. so 10%3 is 1, 12%3 is 0. 
+// x % 3 === 0  is determining if x is divisible by 3. true when x = 12 or 33, false when x = 11
+
+// function capOddWords(sentence){
+//   var words = sentence.split(' '); 
+//   var modifiedWords = words.map(function(word){
+//     // word.length % 2 === 0  this means if the length is even use !== to say if it's odd. 
+//     if (word.length % 2 !== 0 ){
+//       word = word.toUpperCase(); 
+//     }
+//     return word; 
+//   }); 
+//   return modifiedWords; // this returns an array, so we need something more 
+//   return modifiedWords.join(' '); // could join on underscores __. leaving it empty may mean join on commas , 
+// };
+
+// function capOddWords(sentence){
+//   var words = sentence.split(' '); 
+//   var modifiedWords = words.map(function(word){    
+//     if (word.length % 2 !== 0 ){
+//       return word.toUpperCase(); 
+//     } else {      
+//       return word; 
+//     }
+//   }); 
+//   return modifiedWords.join(' '); 
+// };
+
+// console.log(capOddWords('a string or something'));
+// does the same. 
+// return is always connected to the function it's in. 
+
+// function capOddWords(sentence){
+//   var words = sentence.split(' '); 
+//   return; 
+//   var modifiedWords = words.map(function(word){    
+//     console.log('WHOOOOOAAA');
+//     if (word.length % 2 !== 0 ){
+//       return word.toUpperCase(); 
+//     } else {      
+//       return word; 
+//     }
+//   }); 
+//   return modifiedWords.join(' '); 
+// };
+// console.log(capOddWords('a string or something'));
+
+// I missed stuff 
+
+// chain stuff. 
+// function capOddWords(sentence){
+//   var words = sentence.split(' '); 
+//   return words.map(function(word, i){    
+//     if (word.length % 2 !== 0 ){
+//       word = word.toUpperCase(); 
+//     } 
+//     return word; 
+//   }).join(' '); 
+// };
+
+// console.log(capOddWords('a string or something'));
+
+// function capOddWords(sentence){
+//   return sentence.split(' ').map(function(word, i){    
+//     if (word.length % 2 !== 0 ){
+//       word = word.toUpperCase(); 
+//     } 
+//     return word; 
+//   }).join(' '); 
+// };
+// console.log(capOddWords('a string or something'));
+
+
+function capOddWords(sentence){
+  var words = sentence.split(' '); 
+  return sentence.split(' ').map(function(word, i){    
+    if (word.length % 2 !== 0 ){
+      word = word.toUpperCase(); 
+    } 
+    return word; 
+  }).join(' '); 
+
+  var newSentence = modifiedWords.join(' '); 
+  return newSentence; 
+  // this is overkill. 
+};
+console.log(capOddWords('a string or something'));
+
+==== break =====
+
+reduce is another iterator, call it on an instance of an array. but reduce is different from map. reduce is when you take an array and just get one value out of it. what that value is could be anything. maybe it's a number. take an array of numbers and add them all up. maybe take an array of objects and extract values and get just one value. a lot of different ways to use it. 
+
+see main.js in basicjs
+
+Me: damn, i should have just made multiple main.js files right at the begining. 
+
+
+=== break ===
+== Cade: javascript in the browser ==
+browswer stuff. javascript. 
+javascript originated running in the browswer. 
+the console in chrome dev tools function just like the node repl 
+var x = 4 
+undefined 
+Math.pow(x, 2)
+16
+this is js running in the browswer. this is running it on the page. it is connected. state of the page. console allows us to inject code into the page, allows us to run arbitrary code on the page. we can do all kinds of things on the browswer DOM. 
+when javascript, we want to give things action, things have activity. the thing js is working on is the dom. the document itself is the page itself. we know we've got elements, h1, divs, spans... all organized in this tree, nested boxes metaphor, it's all there. we do this with the document. in the browswer, we have a document object. 
+
+in console type: 
+document 
+this returns: #document
+
+you can see all the js things that are existing on the page. for example, if you type v, you'll see var, a js thing. 
+
+when you go to #document... you can open it up by clicking the arrow. that's the page. this document thing, the value of it is #document 
+the document is the whole thing except one more thing that's outside the document. that's the window! and there's the window as well! 
+window 
+Window { ... }
+Window is an object. it's everything. literally everything. everything that exists in javascript and including other things such as the qualities of the window. 
+window.outerWidth
+1280
+what if i shrink my window? 
+window.outerWidth 
+947
+window.outerWidth 
+501
+
+you can: 
+window.outerWidth = 1000 
+but you usually don't do that. 
+me: what? 
+
+var waterBuffalo = "buffalo"
+we just added the variable. the window object is the global scope. this is bedrock as far as the browswer is concered. anything that's declared at all is in the window. 
+
+the document is in the window. but this time when i open it up, there are other things. 
+
+the js chrome console is great for debugging. if you don't want to spin up node repl, you can do it in the browswer. 
+
+if you want to be acting on the document... 
+document.
+just by saying that, it's saying all the things you can do on the document. 
+getElementById, getElementByTagName()...
+
+document.getElmentByTagName('h1')
+this returns: 
+<h1>A very simple webpage. This is an "h1" level header.</h1>
+
+any activity you want to do on the dom is computationally expensive. can be time expensive if you have a really big web page, responsiveness. 
+
+search for something, add something, remove something, any dom access you think of has a cost. if we're just running js by itself, without the dom, it's superfast, faster than we have to care about. it gets complicated and slower when it involves the dom. if i want to add a bunch of dom nodes to the dom, maybe i have loop that i'm looping multiple times, everytime i add an element. every time, we find the place we want to put the element... this is pretty slow. 
+
+another way, let's make a bunch of things in javascript, then put them in the dom. this is more efficient than a loop. 
+
+document.getElmentByTagName('p')
+notice we always get an array of elements. 
+document.getElmentByTagName('p').length 
+12 
+that's how many p tags we have on the page. 
+document.getElmentByTagName('p')[0] 
+<p>This is a standard paragraph.</p> 
+we get the first element. 
+
+we want to add some functionality to something on the page. be able to click something then a console log happens. when i click on something in the h1, i get a console log that says something. here's how we do that. we get, find that element. that's: 
+document.getElementsByTagName('h1')
+that'll give us all of the h1s. i only really want the first one, the only one in this case. 
+document.getElementsByTagName('h1')[0]
+
+then this method, addEventListener() 
+there's lots of different kinds of events. if you click an element, that'll create a click event on that element. we can tell an element to listen for click events. 
+
+
+first argument is the event. second argument is the event handler, the function that's evoked on the event. it happens everytime event happens. 
+document.getElementsByTagName('h1')[0].addEventListener('click', function(){
+  console.log("you've clicked the h1!!!");
+})
+now clicking the h1 does the console log. 
+
+by the way, hit option enter in chrome to make multiline things. 
+
+hovering, srolling, anything that happens from minimizing, resizing, closing the window, are all events we can attach code to, to give action. 
+
+var count = 0
+document.getElementsByTagName('h1')[0].addEventListener('click', function(){
+  console.log(++count);
+})
+
+notice that the other event listener doesn't go away. they can stack. 
+
+say i want to change the h2 to be the count when i click the h1. i need to get that h2. can do it the same way i found h2. .innerHTML is essentially the text inside. 
+var count = 0
+document.getElementsByTagName('h1')[0].addEventListener('click', function(){
+  document.getElementsByTagName('h2')[0].innerHTML = ++count; 
+});
+
+it works! 
+
+var h2 =  document.getElementsByTagName('h2')[0] 
+h2. 
+this is showing us everything we can do with that element. 
+h2.innerHTML
+49 
+
+html attributes are things that are inside the tags. in the img tag, src= is an attribute. we can modify those things. 
+
+we can change the css of something with javascript 
+
+h2.setAttribute('style', 'color:blue;')
+now it's blue. 
+can also do: 
+
+h2.style
+h2.style.color = 'red'
+"red"
+
+
+new index.html in htmltest 
+
+[b]
+in terminal, control r
+this allows you to search for things you've put in your terminal before!!![/b]
+control r p enter 
+to get the python server command 
+
+i put the script in the bottom of the body similar to reason why put css in top. put css in top so that things look right immediately. script is in bottom because code is the last thing we want to run. we want our page to be there first. so we link our code in the bottom. 
+
+anything you can do with jquery you can do with javascript. that's because jquery runs on javascript. 
+
+it takes time for the dom to load. there are instances when the code gets run before dom gets loaded. say we're loading images from other places or waiting for data to come from api, it's gonna take time for dom to get loaded. we need to wait until it's ready. need to make sure code doesn't get run before dom is completely loaded. there's a dom event that makes sure that dom is ready. and we write all our code inside that event. this event will happen on the document. 
+
+document.addEventListener('DOMContentLoaded')
+this is equivalent to jQuery's document ready. this is what makes jQuery's ready method to work. 
+
+there's a possibility that you're looking for a dom node that doesn't exist yet, so code wouldn't work. 
+
+i want you guys to make a box and click on the box that'll make it toggle color, make the appearance of it change when you click it. everytime you click it, it should change somehow. 
+
+
+homework tonight, i'd like you guys to make a calculator. you can take inspiration from the one built in mac. 
+this is gonna be done in html, css, and javascript. the specifics on how you want to make it look is up to you. I will say though that, much more important than how it looks is how it works. 
+
+For instance, if i try to divide by 0, 
+in the mac calculator, it'll say "Not a number"
+
+5.6666 
+and hitting decimal again won't do anything cuz I already have a decimal. 
+if i do just .5 , then it's a 0.5 
+
+think of edge cases. start off simple is the best way to go. maybe start from click the numbers and have them show up in display area. here's something I'd suggest to you guys. 
+
+the +/- toggles the positivity. the % essentially just divides by a hundred. these guys just act on the number that's on display. 
+
+the grading is gonna be based on: 
+first, functionality. the biggest percentage on this project. to a lesser extent, your code itself, your code style. if you're not indenting, if your code just looks like shit, you're gonna get docked for that. try to make readable code, that's well organized. readability is important. and things make sense. your variable names are at least kind of reasonable. it's only a problem if the variable names are inaccurate or not descriptive. if they're confusing, it's not good. 
+
+in coding, you do want to assume the worse in your users. assume users are trying to break your app/code, that hackers are trying to hack you. 
+
+mvp is mouse input. but additionally, may make it keyboard friendly as well. you can figure out how to do that. it's a browser event. 
+window.addEventListener('keypress', function(e) {console.log(e)})
+
+window.addEventListener('keypress', function(e) {console.log(String.fromCharCode(e.keyCode))})
+
+no jQuery! no bootstrap! no external libraries! just html, css, and jQuery. this is one with a high ceiling. mvp: just features in the mac calculator. if you want to challenge yourself, scientific calculator. this is a longer assignment. you're gonna have tomorrow morning as well. every Friday morning, I give workshop to CH2. 
+
+structural advice, 
+soemthign will get run once it's loaded? me: whut? 
+
+
+
+can have event listener attach to class or id. example, 
+<div class="number">5</div>
+function numClicked(event){
+  //event.target //the element that recieved the event. if we want the text, then: 
+  event.target.innerHTML // this will return a string "5"
+}
+now you have one handler handling all ten numbers. 
