@@ -31,5 +31,30 @@ Node-RED
 
 bluemix dashboard nodered. enter name, unique host. create. 
 
-
+after staging: 
 http://20160326.mybluemix.net/
+
+
+
+
+
+
+
+
+
+http
+[get] /
+
+
+in Template: 
+
+<html>
+    <head>
+        <title>My First Webpage</title>
+    </head>
+    <body>
+        <h1>My First Webpage</h1>
+        <p>Welcome to the Internet! -- <i>BenHuang</i></p>
+    </body>
+</html>
+
